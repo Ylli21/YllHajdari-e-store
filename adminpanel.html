@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="stylesheetforpanles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="head" title="MinusTwoGlobal">
+                <i class="fa fa-renren"></i> MinusTwo<span class="halfHead">Global<sup style="font-size:40%; color: white;">&reg</sup>
+                </span>
+            </h1>
+            <button class="logInBtnNavBar" title="Log in" onclick="showSide();" class="textAcc">
+                <i class="fa fa-bars" aria-hidden="true" ></i> Koleksionet
+            </button>
+            <button class="FAacc"><i class="fa fa-bars" onclick="showSide();" aria-hidden="true" ></i></button>
+            </div>
+            <div id="loginArea" class="area">
+                    <a href="Javascript:void(0)" title="Close" class="closebtn" onclick="closeSide()">&times;</a>
+                   <div class="dp"><img src="dyta.jpg" title="Admin Dp" height="100px;" width="100px;"></div>
+                    <p id="username" style="color:rgb(89, 156, 255);">ADMINISTRATORI</p>
+                    <hr />
+                    <a href="#dashBoard"><button class="dashBtn"onclick="location = 'Dashboard.html'" title="Shko ne dashboard"><i class="fa fa-dashboard" style="font-size:120%;"></i> DASHBOARDI</button></a>
+                    <table class="navTable">
+                        <tr class="tr">
+                            <th class="th"><i class="fa fa-product-hunt" style="color:aliceblue"></i> PRODUKTET</th>
+                        </tr>
+                        <tr class="tr">
+                            <td class="td"><a href="#footwears" class="link" onclick="closeSide()">ATLETET</a></td>     
+                        </tr>
+                        <tr class="tr">
+                            <td class="td"><a href="#clothes" class="link" onclick="closeSide()">RROBAT</a></td>     
+                        </tr>
+                        <tr class="tr">
+                            <td class="td"><a href="#watches" class="link" onclick="closeSide()">ORAT</a></td>    
+                        </tr>
+                    </table>
+                   <p id="container"></p>
+                    <button onclick="logout();" class="logoutBtn"><i class="fa fa-sign-out"></i> DILNI</button>
+                </div>
+                <div class="saleInfoForm">
+                    <form action="JavaScript:void(0)" onsubmit="insertData(document.getElementById('category').innerText)">
+                        <p id="errorInAdd">Shënim: Ju mund të shtoni çdo ditë vetëm një produkt në secilën kategori.</p>
+                        <input type="text" class="inputOfedit" id="addName" placeholder="Emri Produktit" required="required">
+                        <input type="number" class="inputOfedit" id="addPrice" placeholder="Qmimi Produktit" required="required">
+                        <input type="text" class="inputOfedit" id="addColors" placeholder="Ngjyra Produktit" required="required">
+                        <input type="text" class="inputOfedit" id="addStock" placeholder="Produkti STOK" required="required">
+                        <input type="text" class="inputOfedit" id="addSize" placeholder="Madhsia Produktit" required="required">
+                        <input type="submit" value="+ ADD" class="submitBtnOfSale">
+                    </form>
+                    </div>
+                    <div class="footerOfMode" onclick="document.getElementById('modeForAdd').style.display = 'none';">
+                            <span><i class="fa fa-close"></i> ANULO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="filter"><input type="text" id="userInput" class="input" placeholder="Kerko produktin..." onfocus="this.className += ' shadow'" onblur="this.className='input'"><button class="searchBtn" onclick="filter();"><i class="fa fa-search"></i></button></div>
+                <hr / style="border: 1.5px solid rgb(84, 199, 84)">
+                <div id="displayc"></div>
+                <div id="displaye"></div>
+                <p style="text-align:center;" id="homeButton"><button class="homeBtn" onclick="home();"><i class="fa fa-home"></i> Ballina</button></p>
+                <div id="content">
+                <div id="Produktet">
+                <div id="Patikat">
+                    <h1 class="proHead"><i class="fa fa-angle-double-down" style="color:aliceblue;"></i> PATIKAT</h1>
+                    <div style="text-align:center;" class="fContainer1">
+                    <div class="f1" id="chicago">
+                        <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('chicago');" onmouseout="changeag('chicago','Produktet/Patikat/chicago.jpg');" id="chicago">
+                        <img src="Produktet/Patikat/chicago.jpg" width="200px" height="160px;"> 
+                            <div class="b" onclick="details('chicago','Produktet/Patikat/chicago.jpg')">+</div>
+                    </div>
+                        <p class="proInfoN" onclick="details('chicago','Produktet/Patikat/chicago.jpg')" id="chicago1">Nike Air Jordan 1 Chicago</p>
+                        <p class="proInfo">150.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('chicago','Produktet/Patikat/chicago.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="adminBtnsDelete" onclick="remove('chicago');" title="Delete Product" ><i class="fa fa-trash"></i> Fshij</button>
+                    </div>
+                    <div class="f2" id="blue">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('blue');" onmouseout="changeag('blue','Produktet/Patikat/blue.jpg');" id="blue">
+                        <img src="Produktet/Patikat/blue.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('blue','Produktet/Patikat/blue.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('blue','Produktet/Patikat/blue.jpg')" id="blue11">Nike Air Jordan 1 UNC</p>
+                        <p class="proInfo">130.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('blue','Produktet/Patikat/blue.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="adminBtnsDelete" onclick="remove('blue');" title="Delete Product" ><i class="fa fa-trash"></i> Fshij</button>
+                    </div>
+                    <div class="f3" id="green">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('green');" onmouseout="changeag('green','Produktet/Patikat/green.png');" id="green">
+                        <img src="Produktet/Patikat/green.png" width="200px" height="160px;">
+                        <div class="b" onclick="details('green','Produktet/Patikat/green.png')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('green','Produktet/Patikat/green.png')" id="green1">Nike Air Jordan 1 PINE GREEN</p>
+                        <p class="proInfo">175.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('green','Produktet/Patikat/green.png')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="adminBtnsDelete" onclick="remove('green');" title="Delete Product" ><i class="fa fa-trash"></i> Fshij</button>
+                    </div>
+                    </div>
+                    <div style="text-align:center;" class="fContainer2">
+                    <div class="f4" id="purple">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('purple');" onmouseout="changeag('purple','Produktet/Patikat/purple.jpg');" id="purple">
+                        <img src="Produktet/Patikat/purple.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('purple','Produktet/Patikat/purple.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('purple','Produktet/Patikat/purple.jpg')" id="purple1">Nike Air Jordan 1 CourtPurple</p>
+                        <p class="proInfo">160.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('purple','Produktet/Patikat/purple.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="adminBtnsDelete" onclick="remove('purple');" title="Delete Product" ><i class="fa fa-trash"></i> Fshij</button>
+                    </div>
+                    <div class="f5" id="black">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('black');" onmouseout="changeag('black','Produktet/Patikat/black.jpg');" id="black">
+                        <img src="Produktet/Patikat/black.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('black','Produktet/Patikat/black.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('black','Produktet/Patikat/black.jpg')" id="black1">Nike Air Jordan 1 Wolf Grey</p>
+                        <p class="proInfo">155.00@</p>
+                        <button class="adminBtnsEdit" onclick="details('black','Produktet/Patikat/black.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="adminBtnsDelete" onclick="remove('black');" title="Delete Product" ><i class="fa fa-trash"></i> Fshij</button>
+                    </div>
+                    <div class="f6" id="orange">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('orange');" onmouseout="changeag('orange','Produktet/Patikat/orange.jpg');" id="orange">
+                        <img src="Produktet/Patikat/orange.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('orange','Produktet/Patikat/orange.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('orange','Produktet/Patikat/orange.jpg')" id="orange1">Nike Air Jordan 1 YinYang</p>
+                        <p class="proInfo">130.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('orange','Produktet/Patikat/orange.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="adminBtnsDelete" onclick="remove('orange');" title="Delete Product" ><i class="fa fa-trash"></i> Fshij</button>
+                    </div>
+                    <div id="newAddedOfFootwears">
+                    </div>
+                    <button class="adminBtnsAdd" onclick="add('Patikat','shtoPatikatEReja');" title="ADD Product" id="patikatsAdd"><i class="fa fa-plus"></i> Shto Produktin</button>
+                    </div>
+                </div>
+
+                <div id="rrobat">
+                    <h1 class="proHead"><i class="fa fa-angle-double-down" style="color:aliceblue;"></i> RROBAT</h1>
+                    <div style="text-align:center;" class="fContainer1">
+                    <div class="f1" id="rr1">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('rr1');" onmouseout="changeag('rr1','Produktet/Rrobat/rr1.jpg');" id="rr1">
+                        <img src="Produktet/Rrobat/rr1.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('rr1','Produktet/Rrobat/rr1.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('rr1','Produktet/Rrobat/rr1.jpg')">Nike Popover Hoody White & Black</p>
+                        <p class="proInfo">50.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('rr1','Produktet/Rrobat/rr1.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('addidashoody')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                    </div>
+                    <div class="f2" id="rr2">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('rr2');" onmouseout="changeag('rr2','Produktet/Rrobat/rr2.jpg');"id="rr2">
+                        <img src="Produktet/Rrobat/rr2.jpg" width="200px" height="180px;">
+                        <div class="b" onclick="details('rr2','Produktet/Rrobat/rr2.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('rr2','Produktet/Rrobat/rr2.jpg')">MinusTwo Cargo Green&Yellow Pants</p>
+                        <p class="proInfo">120.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('rr2','Produktet/Rrobat/rr2.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('rr2')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                    </div>
+                    <div class="f3" id="rr3">
+                            <div class="imgCover"alt="Please Wait Loading..."  onmouseover="change('rr3');" onmouseout="changeag('rr3','Produktet/Rrobat/rr3.jpg');" id="rr3">
+                        <img src="Produktet/Rrobat/rr3.jpg" width="200px" height="200px;">
+                        <div class="b" onclick="details('rr3','Produktet/Rrobat/rr3.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('rr3','Produktet/Rrobat/rr3.jpg')">MinusTwo Cargo Black&Purple Pants </p>
+                        <p class="proInfo">120.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('rr3','Produktet/Rrobat/rr3.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('rr3')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                    </div>
+                    </div>
+                    <div style="text-align:center;" class="fContainer2">
+                    <div class="f4" id="rr4">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('rr4');" onmouseout="changeag('rr4','Produktet/Rrobat/rr4.jpg');" id="rr4">
+                        <img src="Produktet/Rrobat/rr4.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('rr4','Produktet/Rrobat/rr4.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('rr4','Produktet/Rrobat/rr4.jpg')">MinusTwo Black&Purple Hat</p>
+                        <p class="proInfo">25.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('rr4','Produktet/Rrobat/rr4.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('rr4')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                    </div>
+                    <div class="f5" id="rr5">
+                            <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('rr5');" onmouseout="changeag('rr5','Produktet/Rrobat/rr5.jpg');" id="rr5">
+                        <img src="Produktet/Rrobat/rr5.jpg" width="200px" height="190px;">
+                        <div class="b" onclick="details('rr5','Produktet/Rrobat/rr5.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('rr5','Produktet/Rrobat/rr5.jpg')">Trapstar Jacket</p>
+                        <p class="proInfo">250.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('rr5','Produktet/Rrobat/rr5.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('rr5')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                    </div>
+                    <div class="f6" id="rr6">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('rr6');" onmouseout="changeag('rr6','Produktet/Rrobat/rr6.jpg');" id="rr6">
+                        <img src="Produktet/Rrobat/rr6.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('rr6','Produktet/Rrobat/rr6.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('rr6','Produktet/Rrobat/rr6.jpg')">Anime Hoodie Sakura Edition</p>
+                        <p class="proInfo">60.00$</p>
+                        <button class="adminBtnsEdit" onclick="details('rr6','Produktet/Rrobat/rr6.jpgg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('rr6')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                    </div>
+                    </div>
+                </div>
+
+                <div id="orat">
+                        <h1 class="proHead"><i class="fa fa-angle-double-down" style="color:aliceblue;"></i> ORA</h1>
+                        <div style="text-align:center;" class="fContainer1">
+                        <div class="f1" id="o1">
+                            <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('o1');" onmouseout="changeag('o1','Produktet/Oret/o1.jpg');" id="o1">
+                            <img src="Produktet/Oret/o1.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('o1','Produktet/Oret/o1.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('o1','Produktet/Oret/o1.jpg')">ROLEX GOLD MODEL</p>
+                            <p class="proInfo">30.000$</p>
+                            <button class="adminBtnsEdit" onclick="details('o1t','Produktet/Oret/o1.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('o1')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                        </div>
+                        <div class="f2" id="o2">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('o2');" onmouseout="changeag('o2','Produktet/Oret/o2.jpg');" id="o2">
+                            <img src="Produktet/Oret/o2.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('o2','Produktet/Oret/o2.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('o2','Produktet/Oret/o2.jpg')">ROLEX BLACK MODEL</p>
+                            <p class="proInfo">18.500$</p>
+                            <button class="adminBtnsEdit" onclick="details('o2','Produktet/Oret/o2.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('o2')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                        </div>
+                        <div class="f3" id="o3">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('o3');" onmouseout="changeag('o3','Produktet/Oret/o3.jpg');" id="o3">
+                            <img src="Produktet/Oret/o3.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('o3','Produktet/Oret/o3.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('o3','Produktet/Oret/o3.jpg')">Daniel Wellington CAB</p>
+                            <p class="proInfo">250$</p>
+                            <button class="adminBtnsEdit" onclick="details('armanicab','products/watches/w3.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('o3')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                        </div>
+                        </div>
+                        <div style="text-align:center;" class="fContainer2">
+                        <div class="f4" id="o4">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('o4');" onmouseout="changeag('o4','Produktet/Oret/o4.jpg');" id="o4">
+                            <img src="Produktet/Oret/o4.jpg" width="230px" height="160px;">
+                            <div class="b" onclick="details('o4','Produktet/Oret/o4.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('o4','Produktet/Oret/o4.jpg')">HUBLOT CASEPROTECTOR</p>
+                            <p class="proInfo">10.000$</p>
+                            <button class="adminBtnsEdit" onclick="details('o4','Produktet/Oret/o4.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('o4')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                        </div>
+                        <div class="f5" id="o5">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('o5');" onmouseout="changeag('o5','Produktet/Oret/o5.jpg');" id="o5">
+                            <img src="Produktet/Oret/o5.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('o5','Produktet/Oret/o5.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('o5','Produktet/Oret/o5.jpg')">Casio Protrek G-SHOCK</p>
+                            <p class="proInfo">650$</p>
+                            <button class="adminBtnsEdit" onclick="details('o5','Produktet/Oret/o5.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('o5')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                        </div>
+                        <div class="f6" id="o6">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('o6');" onmouseout="changeag('o6','Produktet/Oret/o6.jpg');" id="o6">
+                            <img src="Produktet/Oret/o6.jpg" width="180px" height="170px;">
+                            <div class="b" onclick="details('o6','Produktet/Oret/o6.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('o6','Produktet/Oret/o6.jpg')">Emporio Armani</p>
+                            <p class="proInfo">350$</p>
+                            <button class="adminBtnsEdit" onclick="details('o6','Produktet/Oret/o6.jpg')" title="More" ><i class="fa fa-arrow-up"></i> Me shume</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('o6')"><i class="fa fa-shopping-cart"></i> Fshij</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+        <p id="topButton" style="text-align:center;"><a href="#top"><button class="topBtn" title="Top"><i class="fa fa-arrow-up"></i></button></a></p>
+        <div class="footer">
+            <p class="footerr">@COPYRIGHTS-2022-23. Të gjitha drejtat e rezervuara.</p><a href="#top">
+        </div>
+        </div>
+<script src="app.js"></script>
+</body>
+</html>
